@@ -8,10 +8,25 @@
 /*.unityproj
 /*.sln
 /*.suo
+/*.tmp
 /*.user
 /*.userprefs
 /*.pidb
 /*.booproj
 
+# Unity3D generated meta files
+*.pidb.meta
+
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.d
