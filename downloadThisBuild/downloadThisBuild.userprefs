@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="94" Column="38" />
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="169" Column="4" />
+      <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" Line="26" Column="7" />
+      <File FileName="Assets\OVR\Scripts\OVRCamera.cs" Line="69" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
