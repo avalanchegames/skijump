@@ -201,8 +201,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 17514797}
+  - 114: {fileID: 17514798}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FPSCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,11 +216,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 17514796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1184.66931, y: 405.598633, z: 1265.60999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 46
+--- !u!114 &17514798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 17514796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd1dafe935f47d43a84cac47a359350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Run: 1
+  OutputFrequency: .25
 --- !u!1 &24300985
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,6 +6952,7 @@ MonoBehaviour:
   inShakyBit: 0
   shaking: 0
   timeScaleVal: .200000003
+  DisableDebugMessages: 1
 --- !u!54 &728574973
 Rigidbody:
   m_ObjectHideFlags: 0

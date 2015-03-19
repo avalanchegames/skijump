@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shaders\BlankingOnFrameDrop\BumpedDiffuse.shader">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="169" Column="4" />
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="193" Column="4" />
       <File FileName="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" Line="26" Column="7" />
-      <File FileName="Assets\OVR\Scripts\OVRCamera.cs" Line="69" Column="19" />
+      <File FileName="Assets\OVR\Scripts\OVRCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FPSCounter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Shaders\BlankingOnFrameDrop\Diffuse.shader" Line="20" Column="3" />
+      <File FileName="Assets\Shaders\BlankingOnFrameDrop\BumpedDiffuse.shader" Line="20" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
