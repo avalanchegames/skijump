@@ -2,7 +2,7 @@
 using System.Collections;
 
 // Andrew Robson:
-// This script checks the output's frame rate
+// This script checks the output's frame rate sets the shader to draw black if the frame rate is too low.
 
 public class CameraBlanker : MonoBehaviour {
 
