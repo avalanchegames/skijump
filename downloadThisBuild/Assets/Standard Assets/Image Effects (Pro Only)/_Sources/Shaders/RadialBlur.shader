@@ -1,73 +1,66 @@
-Shader "Hidden/RadialBlur" 
-{
-	Properties {
-		_MainTex ("Base (RGB)", 2D) = "" {}
-	}
-	
-	// Shader code pasted into all further CGPROGRAM blocks
-	CGINCLUDE
-		
-	#include "UnityCG.cginc"
-	
-	struct v2f {
-		float4 pos : SV_POSITION;
-		float2 uv : TEXCOORD0;
-		float2 blurVector : TEXCOORD1;
-	};
-		
-	sampler2D _MainTex;
-	
-	float4 _BlurRadius4;
-	float4 _SunPosition;
+// Upgrade NOTE: replaced 'samplerRECT' with 'sampler2D'
+// Upgrade NOTE: replaced 'texRECT' with 'tex2D'
 
-	float4 _MainTex_TexelSize;
-		
-	v2f vert( appdata_img v ) {
-		v2f o;
-		o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-		o.uv.xy =  v.texcoord.xy;
-		
-		o.blurVector = (_SunPosition.xy - v.texcoord.xy) * _BlurRadius4.xy;	
-		
-		return o; 
-	}
-	
-	#define SAMPLES_FLOAT 6.0f
-	#define SAMPLES_INT 6
-	
-	half4 frag(v2f i) : SV_Target 
-	{
-		half4 color = half4(0,0,0,0);
-				
-		for(int j = 0; j < SAMPLES_INT; j++)   
-		{	
-			half4 tmpColor = tex2D(_MainTex, i.uv.xy);
-			color += tmpColor;
-			
-			i.uv.xy += i.blurVector; 	
-		}
-		
-		return color / SAMPLES_FLOAT;
-	}
-
-	ENDCG
-	
-Subshader 
-{
- Blend One Zero
- Pass {
-	  ZTest Always Cull Off ZWrite Off
-	  Fog { Mode off }      
-
-      CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
-      #pragma vertex vert
-      #pragma fragment frag
-      
-      ENDCG
-  } // Pass
-} // Subshader
-
-Fallback off
-
-} // shader
+Shader "Hidden/radialBlur" {
+Properties {
+    _MainTex ("Input", RECT) = "white" {}
+    _BlurStrength ("", Float) = 0.5
+    _BlurWidth ("", Float) = 0.5
+}
+    SubShader {
+        Pass {
+            ZTest Always Cull Off ZWrite Off
+            Fog { Mode off }
+       
+    CGPROGRAM
+// Upgrade NOTE: excluded shader from DX11, Xbox360, OpenGL ES 2.0 because it uses unsized arrays
+#pragma exclude_renderers d3d11 xbox360 gles
+   
+    #pragma vertex vert_img
+    #pragma fragment frag
+    #pragma fragmentoption ARB_precision_hint_fastest
+ 
+    #include "UnityCG.cginc"
+ 
+    uniform sampler2D _MainTex;
+    uniform half _BlurStrength;
+    uniform half _BlurWidth;
+    uniform half _iWidth;
+    uniform half _iHeight;
+ 
+    half4 frag (v2f_img i) : COLOR {
+        half4 color = tex2D(_MainTex, i.uv);
+       
+        // some sample positions
+        half samples[10] = half[](-0.08,-0.05,-0.03,-0.02,-0.01,0.01,0.02,0.03,0.05,0.08);
+       
+        //vector to the middle of the screen
+        half2 dir = 0.5 * half2(_iHeight,_iWidth) - i.uv;
+       
+        //distance to center
+        half dist = sqrt(dir.x*dir.x + dir.y*dir.y);
+       
+        //normalize direction
+        dir = dir/dist;
+       
+        //additional samples towards center of screen
+        half4 sum = color;
+        for(int n = 0; n < 10; n++)
+        {
+            sum += tex2D(_MainTex, i.uv + dir * samples[n] * _BlurWidth * _iWidth);
+        }
+       
+        //eleven samples...
+        sum *= 1.0/11.0;
+       
+        //weighten blur depending on distance to screen center
+        half t = dist * _BlurStrength / _iWidth;
+        t = clamp(t, 0.0, 1.0);
+       
+        //blend original with blur
+        return mix(color, sum, t);
+    }
+    ENDCG
+        }
+    }
+}
