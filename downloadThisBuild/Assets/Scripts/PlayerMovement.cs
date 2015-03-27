@@ -6,11 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
 	private Vector3 movementVector;
 	private CharacterController characterController;
-	
-	private float movementSpeed = 8;
-	public float jumpPower = 0.8f;
-	public float jumpDelay = 1.0f;
-	float jumpStartTime;
+	//leadup animation 1-140
+	//actual jump 140-170
+	//170-365 still in progress
+	//365 - landing
+	public float jumpPower = 0.8f;		//this value is applied to the player object when the jump occurs and 
+	float jumpStartTime;				//fetches the time when the jump started
 	float landingTime;
 	bool started;
 	public bool jumpDone;				
@@ -19,15 +20,16 @@ public class PlayerMovement : MonoBehaviour
 	public bool finished;				//turn true once the player finished the track
 	public bool inShakyBit;				//controls if the player is in the "Danger Zone"
 	public bool shaking;				//holds if the player is shaking or not
-	private bool landingRumble;
-	public float timeScaleVal = 0.2f;
-	const float maxShakeRot = 4.0f;
-	const float shakePerFrame = 0.6f;
-	bool shakingRight = true;
-	float shake;
-	PlayerStateController PlayerStateManager;
-	OVRCameraController OculusCamera;
-	float originalRot;
+	private bool landingRumble;			//controls if the controller rumble feature is turned on
+	public float timeScaleVal = 0.2f;	//the amount of slow motion to apply
+	const float maxShakeRot = 4.0f;		//maximum shaking rotation allowed
+	const float shakePerFrame = 0.6f;	//how many times to shake the oculus camera per frame
+	bool shakingRight = true;			//determine if the shaking takes palce to the left or right
+	public bool slowMo;					//determines if slow motion is turned on or not
+	float shake;						//controls if shaking is turned on or not
+	PlayerStateController PlayerStateManager;	//an instance of the PlayerStateController state machine 
+	OVRCameraController OculusCamera;			//an instance of OVRCameraController to handle oculus-related code
+	float originalRot;							//stores the original rotation of the camera, in order to be able to switch back to this once the player leaves the shaking part
 	
 	
 	void Start()
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 		inShakyBit = false;
 		shaking = false;
 		landingRumble = false;
+		slowMo = false;
 		PlayerStateManager.changeState (PlayerStateController.playerStates.starting);
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		OculusCamera = GetComponentInChildren<OVRCameraController>();
@@ -135,9 +138,20 @@ public class PlayerMovement : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		movementVector.x = Input.GetAxis("LeftJoystickX") * movementSpeed;
-		movementVector.z = Input.GetAxis("LeftJoystickY") * movementSpeed;
-		
+		//movementVector.x = Input.GetAxis("LeftJoystickX") * movementSpeed;
+		//movementVector.z = Input.GetAxis("LeftJoystickY") * movementSpeed;
+
+		//turn slowmo on and off
+		if (slowMo) 
+		{
+			Time.timeScale = timeScaleVal;
+			setBlur(true);
+				
+		} else 
+		{
+			Time.timeScale = 1.0f;
+			setBlur(false);
+		}
 		
 		
 		if (jumpEnabled) {	
@@ -155,10 +169,10 @@ public class PlayerMovement : MonoBehaviour
 		if (jumpDone) {
 			PlayerStateManager.changeState (PlayerStateController.playerStates.jumping);
 			jumpStartTime = Time.time;
-			Time.timeScale = timeScaleVal;
+			//Time.timeScale = timeScaleVal;
 			//GetComponentInChildren<MotionBlur>().enabled = true;
 			//GetComponentInChildren<OVRCamera> ().GetComponent<MotionBlur> ().enabled = true;
-			setBlur(true);
+			//setBlur(true);  --- previous blur enabler
 		}
 		
 		if (!jumpEnabled)
@@ -175,10 +189,11 @@ public class PlayerMovement : MonoBehaviour
 		
 		if (landed) 
 		{
-			Time.timeScale = 1.0f;
+			//Time.timeScale = 1.0f;
+			slowMo =false;
 			//GetComponentInChildren<MotionBlur>().enabled = false;
 			//GetComponentInChildren<OVRCamera> ().GetComponent<MotionBlur> ().enabled = false;
-			setBlur(false);
+			//setBlur(false);
 			if (landingTime==0.0f) 
 			{
 				PlayerStateManager.changeState (PlayerStateController.playerStates.landing);
