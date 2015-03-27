@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
 	OVRCameraController OculusCamera;
 	float originalRot;
 	
-	public bool DisableDebugMessages = true;
 	
 	void Start()
 	{
@@ -197,10 +196,7 @@ public class PlayerMovement : MonoBehaviour
 			PlayerStateManager.changeState (PlayerStateController.playerStates.finished);
 		}
 		
-		if (!DisableDebugMessages)
-		{
-			Debug.Log (PlayerStateManager.getState());
-		}
+		//Debug.Log (PlayerStateManager.getState());
 		
 		rigidbody.AddForce (movementVector);
 	}

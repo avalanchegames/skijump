@@ -2,14 +2,15 @@
 using System.Collections;
 
 // Andrew Robson:
-// A script to output the framerate to the console.
+// A script to output the framerate to the console when desired and get the value from an accessor.
 
 public class FPSCounter : MonoBehaviour 
 {
-	public bool Run = false;
+	public bool OutputToConsole = false;
 	public float OutputFrequency = 1.0f; // How often the FPS should be reported. 0 will report every frame.
 	
 	private float TimeElapsed;
+	private float FPSCount = 61.0f; // Initial value assume that everything's OK.
 	
 	// Use this for initialization
 	void Start () 
@@ -20,8 +21,11 @@ public class FPSCounter : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		// Only run if desired.
-		if (!Run)
+		// Record FPS for accessor.
+		FPSCount = 1.0f/Time.deltaTime;
+		
+		// Only run console output if desired.
+		if (!OutputToConsole)
 		{
 			return;
 		}
@@ -30,7 +34,7 @@ public class FPSCounter : MonoBehaviour
 		
 		if (OutputFrequency <= 0.0f)
 		{
-			Debug.Log("FPS: " + (1.0f/Time.deltaTime).ToString() );
+			Debug.Log("FPS: " + (FPSCount).ToString() );
 		}
 		else
 		{
@@ -40,8 +44,13 @@ public class FPSCounter : MonoBehaviour
 			{
 				TimeElapsed -= OutputFrequency;
 				
-				Debug.Log("FPS: " + (1.0f/Time.deltaTime).ToString() );
+				Debug.Log("FPS: " + (FPSCount).ToString() );
 			}
 		}
+	}
+	
+	public float GetFPS()
+	{
+		return FPSCount;
 	}
 }
