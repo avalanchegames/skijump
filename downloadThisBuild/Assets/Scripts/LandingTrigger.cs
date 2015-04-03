@@ -16,7 +16,7 @@ public class LandingTrigger : MonoBehaviour {
 		other.gameObject.GetComponent <PlayerMovement>().landed = true;	// Change the player's state to landed.
 		//PlayerStateManager = gameObject.GetComponent<PlayerStateController> ();
 		//if (PlayerStateManager.getState () == PlayerStateController.playerStates.landing && !soundTrigger) {
-		if (!soundTrigger) // If the soound has not already been played.
+		if (!soundTrigger) // If the sound has not already been played.
 		{
 			other.gameObject.audio.Stop (); // Stop any audio the player is currently playing.
 			other.gameObject.audio.PlayOneShot (landingSound);	// Play the landing sound once.
