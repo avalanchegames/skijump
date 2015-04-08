@@ -10,6 +10,6 @@ public class slowmoLanding : MonoBehaviour {
 		other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
 		other.gameObject.audio.Stop ();
 		other.gameObject.audio.clip = SoundFile;
-		other.gameObject.audio.Play ();
+		other.gameObject.audio.Play ();	// Heartbeat slom mo sound will now be the player's current sound.
 	}
 }
