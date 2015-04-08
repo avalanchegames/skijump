@@ -9,6 +9,7 @@ public class slowmoLanding : MonoBehaviour {
 	{
 		other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
 		other.gameObject.audio.Stop ();
-		other.gameObject.audio.PlayOneShot (SoundFile);
+		other.gameObject.audio.clip = SoundFile;
+		other.gameObject.audio.Play ();
 	}
 }

@@ -219,7 +219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 81
+  m_RootOrder: 84
 --- !u!1 &22604920
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +942,7 @@ Transform:
   m_LocalScale: {x: 12.832819, y: 12.8328171, z: 12.8328171}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 56
 --- !u!1 &73106400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6540,6 +6540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47dfa895450d0e48ac28a6eeafc5abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundFile: {fileID: 8300000, guid: d1d5ffeabdfd67d4d8c97676ea84862f, type: 3}
 --- !u!23 &281414596
 Renderer:
   m_ObjectHideFlags: 0
@@ -8878,7 +8879,7 @@ Transform:
   m_LocalScale: {x: 19.5059986, y: 19.5059948, z: 19.5059948}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 57
 --- !u!1001 &430495295
 Prefab:
   m_ObjectHideFlags: 0
@@ -9529,7 +9530,7 @@ Transform:
   m_Children:
   - {fileID: 60699913}
   m_Father: {fileID: 0}
-  m_RootOrder: 84
+  m_RootOrder: 83
 --- !u!95 &514913319
 Animator:
   serializedVersion: 3
@@ -16292,7 +16293,7 @@ Transform:
   m_Children:
   - {fileID: 2117464964}
   m_Father: {fileID: 0}
-  m_RootOrder: 82
+  m_RootOrder: 81
 --- !u!95 &773556461
 Animator:
   serializedVersion: 3
@@ -17436,6 +17437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28ef33eaa7a5274d8902048d5734c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundFile: {fileID: 8300000, guid: d1d5ffeabdfd67d4d8c97676ea84862f, type: 3}
 --- !u!23 &851834453
 Renderer:
   m_ObjectHideFlags: 0
@@ -18162,7 +18164,7 @@ Transform:
   m_Children:
   - {fileID: 148106232}
   m_Father: {fileID: 0}
-  m_RootOrder: 83
+  m_RootOrder: 82
 --- !u!95 &924008659
 Animator:
   serializedVersion: 3
@@ -35062,7 +35064,7 @@ Transform:
   m_LocalScale: {x: 1.61150837, y: .522233546, z: 5.91696835}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 58
 --- !u!1001 &1599697649
 Prefab:
   m_ObjectHideFlags: 0
@@ -36951,7 +36953,7 @@ Transform:
   m_LocalScale: {x: 19.5060005, y: 19.5059948, z: 19.5059948}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 55
 --- !u!1 &1653024157
 GameObject:
   m_ObjectHideFlags: 0
