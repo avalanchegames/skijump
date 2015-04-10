@@ -15,12 +15,12 @@ public class PlayerStateController : MonoBehaviour {
 	}
 	private playerStates currentState;	
 
-	public void changeState(playerStates newState)
+	public void ChangeState(playerStates newState)
 	{
 		currentState = newState;
 	}
 
-	public playerStates getState()
+	public playerStates GetState()
 	{
 		return currentState;
 	}

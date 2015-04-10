@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: f0ca24875fe7cb64d9e0117052aa28f3
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BlankingShader: {fileID: 4800000, guid: 7c2dd73656f775746b4f548824c428c2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

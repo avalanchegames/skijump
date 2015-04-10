@@ -6,16 +6,16 @@ using System.Collections;
 
 public class FPSCounter : MonoBehaviour 
 {
-	public bool OutputToConsole = false;
-	public float OutputFrequency = 1.0f; // How often the FPS should be reported. 0 will report every frame.
+	public bool outputToConsole = false;
+	public float outputFrequency = 1.0f; // How often the FPS should be reported. 0 will report every frame.
 	
-	private float TimeElapsed;
+	private float timeElapsed;
 	private float FPSCount = 61.0f; // Initial value assume that everything's OK.
 	
 	// Use this for initialization
 	void Start () 
 	{
-		TimeElapsed = 0.0f;
+		timeElapsed = 0.0f;
 	}
 	
 	// Update is called once per frame
@@ -25,24 +25,24 @@ public class FPSCounter : MonoBehaviour
 		FPSCount = 1.0f/Time.deltaTime;
 		
 		// Only run console output if desired.
-		if (!OutputToConsole)
+		if (!outputToConsole)
 		{
 			return;
 		}
 		
-		// Ignore TimeElapsed if Frequency is zero.
+		// Ignore timeElapsed if Frequency is zero.
 		
-		if (OutputFrequency <= 0.0f)
+		if (outputFrequency <= 0.0f)
 		{
 			Debug.Log("FPS: " + (FPSCount).ToString() );
 		}
 		else
 		{
-			TimeElapsed += Time.deltaTime;
+			timeElapsed += Time.deltaTime;
 			
-			if (TimeElapsed > OutputFrequency)
+			if (timeElapsed > outputFrequency)
 			{
-				TimeElapsed -= OutputFrequency;
+				timeElapsed -= outputFrequency;
 				
 				Debug.Log("FPS: " + (FPSCount).ToString() );
 			}

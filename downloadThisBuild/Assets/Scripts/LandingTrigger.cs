@@ -5,7 +5,7 @@ using System.Collections;
 
 public class LandingTrigger : MonoBehaviour {
 
-	PlayerStateController PlayerStateManager;
+	PlayerStateController playerStateManager;
 	public AudioClip landingSound;	// The sound that will be played when the player collides with the landing trigger
 	bool soundTrigger = false;	// Used to check wether or not the landing sound has played
 	
@@ -14,8 +14,8 @@ public class LandingTrigger : MonoBehaviour {
 	void OnTriggerEnter( Collider other )	// If the landing trigger collides with the player.
 	{
 		other.gameObject.GetComponent <PlayerMovement>().landed = true;	// Change the player's state to landed.
-		//PlayerStateManager = gameObject.GetComponent<PlayerStateController> ();
-		//if (PlayerStateManager.getState () == PlayerStateController.playerStates.landing && !soundTrigger) {
+		//playerStateManager = gameObject.GetComponent<PlayerStateController> ();
+		//if (playerStateManager.getState () == PlayerStateController.playerStates.landing && !soundTrigger) {
 		if (!soundTrigger) // If the sound has not already been played.
 		{
 			other.gameObject.audio.Stop (); // Stop any audio the player is currently playing.

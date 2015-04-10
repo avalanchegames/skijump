@@ -27,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
 	bool shakingRight = true;			//determine if the shaking takes palce to the left or right
 	public bool slowMo;					//determines if slow motion is turned on or not
 	float shake;						//controls if shaking is turned on or not
-	PlayerStateController PlayerStateManager;	//an instance of the PlayerStateController state machine 
-	OVRCameraController OculusCamera;			//an instance of OVRCameraController to handle oculus-related code
+	PlayerStateController playerStateManager;	//an instance of the PlayerStateController state machine 
+	OVRCameraController oculusCamera;			//an instance of OVRCameraController to handle oculus-related code
 	float originalRot;							//stores the original rotation of the camera, in order to be able to switch back to this once the player leaves the shaking part
 	
 	
@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
 		//GetComponentInChildren<MotionBlur>().enabled = false;
 		//GetComponentInChildren<OVRCamera> ().GetComponent<MotionBlur> ().enabled = false;
 		//GetComponentInChildren<OVRCameraController> ().Find("CameraLeft");
-		setBlur (false);
-		PlayerStateManager = gameObject.GetComponent <PlayerStateController> ();
+		SetBlur (false);
+		playerStateManager = gameObject.GetComponent <PlayerStateController> ();
 		started = false;
 		jumpDone = false;
 		jumpEnabled = false;
@@ -50,26 +50,26 @@ public class PlayerMovement : MonoBehaviour
 		shaking = false;
 		landingRumble = false;
 		slowMo = false;
-		PlayerStateManager.changeState (PlayerStateController.playerStates.starting);
+		playerStateManager.ChangeState (PlayerStateController.playerStates.starting);
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-		OculusCamera = GetComponentInChildren<OVRCameraController>();
-		OculusCamera.GetYRotation(ref originalRot);
+		oculusCamera = GetComponentInChildren<OVRCameraController>();
+		oculusCamera.GetYRotation(ref originalRot);
 		
 	}
-	
+
 	void Update()
 	{
-		if (PlayerStateManager.getState () == PlayerStateController.playerStates.slide_down) 
+		if (playerStateManager.GetState () == PlayerStateController.playerStates.slide_down) 
 		{
 			//what happens when sliding down
 			if ((inShakyBit)&&(shaking))
 			{
 				//GamePad.SetVibration(0, 0.3f, 0.3f);
-				startVibrate(0.3f, 0.3f);
+				StartVibrate(0.3f, 0.3f);
 				//do shaky stuff here 
 				//float shaketime = Time.time;
 				
-				OculusCamera.SetCameraRotatesY(true);
+				oculusCamera.SetCameraRotatesY(true);
 				
 				
 				if (shakingRight)
@@ -91,13 +91,13 @@ public class PlayerMovement : MonoBehaviour
 					}
 				}
 				
-				//Transform shakyTransform = OculusCamera.gameObject.transform;
+				//Transform shakyTransform = oculusCamera.gameObject.transform;
 				//shakyTransform.Rotate(Vector3.up, 90.0f, Space.World);
-				OculusCamera.SetYRotation(shake);
+				oculusCamera.SetYRotation(shake);
 				if (Input.GetButtonDown ("B") || Input.GetKey("b"))
 				{
 					//stop shaky stuff from happening
-					stopShaking();
+					StopShaking();
 					return;
 				}
 				
@@ -105,11 +105,11 @@ public class PlayerMovement : MonoBehaviour
 			else 
 			{
 				//GamePad.SetVibration(0, 0.0f, 0.0f);
-				stopVibrate();
+				StopVibrate();
 			}
 			if ((!inShakyBit))
 			{
-				stopShaking();
+				StopShaking();
 				return;
 			}
 			
@@ -117,14 +117,14 @@ public class PlayerMovement : MonoBehaviour
 		
 		if (landingRumble) {
 			//GamePad.SetVibration(0, 0.3f, 0.3f);	
-			startVibrate (0.3f, 0.3f);
+			StartVibrate (0.3f, 0.3f);
 			
 		} 
 		else {
-			stopVibrate();
+			StopVibrate();
 		}
 		
-		if (PlayerStateManager.getState() == PlayerStateController.playerStates.post_landing) {
+		if (playerStateManager.GetState() == PlayerStateController.playerStates.post_landing) {
 			
 			if (Input.GetButton ("B") || Input.GetKey("b"))
 			{
@@ -145,18 +145,18 @@ public class PlayerMovement : MonoBehaviour
 		if (slowMo) 
 		{
 			Time.timeScale = timeScaleVal;
-			setBlur(true);
+			SetBlur(true);
 				
 		} else 
 		{
 			Time.timeScale = 1.0f;
-			setBlur(false);
+			SetBlur(false);
 		}
 		
 		
 		if (jumpEnabled) {	
 			//only do the jump if it is enabled by the trigger
-			PlayerStateManager.changeState (PlayerStateController.playerStates.pre_jump);
+			playerStateManager.ChangeState (PlayerStateController.playerStates.pre_jump);
 			
 			if (( (Input.GetButton ("A")) || Input.GetKey("a") ) && !jumpDone)
 			{
@@ -167,12 +167,12 @@ public class PlayerMovement : MonoBehaviour
 		}
 		
 		if (jumpDone) {
-			PlayerStateManager.changeState (PlayerStateController.playerStates.jumping);
+			playerStateManager.ChangeState (PlayerStateController.playerStates.jumping);
 			jumpStartTime = Time.time;
 			//Time.timeScale = timeScaleVal;
 			//GetComponentInChildren<MotionBlur>().enabled = true;
 			//GetComponentInChildren<OVRCamera> ().GetComponent<MotionBlur> ().enabled = true;
-			//setBlur(true);  --- previous blur enabler
+			//SetBlur(true);  --- previous blur enabler
 		}
 		
 		if (!jumpEnabled)
@@ -182,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
 		if ( (Input.GetButtonDown ("X") || Input.GetKey("x") ) && !started)
 		{
 			started = true;	
-			PlayerStateManager.changeState (PlayerStateController.playerStates.slide_down);
+			playerStateManager.ChangeState (PlayerStateController.playerStates.slide_down);
 			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			rigidbody.AddForce(0.0f, 0.0f, -100.0f);
 		}
@@ -193,47 +193,47 @@ public class PlayerMovement : MonoBehaviour
 			slowMo =false;
 			//GetComponentInChildren<MotionBlur>().enabled = false;
 			//GetComponentInChildren<OVRCamera> ().GetComponent<MotionBlur> ().enabled = false;
-			//setBlur(false);
+			//SetBlur(false);
 			if (landingTime==0.0f) 
 			{
-				PlayerStateManager.changeState (PlayerStateController.playerStates.landing);
+				playerStateManager.ChangeState (PlayerStateController.playerStates.landing);
 				landingRumble = true;
 				landingTime = Time.time;
 			}
 			else if (landingTime!=0.0f)
 			{
-				PlayerStateManager.changeState (PlayerStateController.playerStates.post_landing);
+				playerStateManager.ChangeState (PlayerStateController.playerStates.post_landing);
 			}
 		}
 		
 		if (finished) 
 		{
-			PlayerStateManager.changeState (PlayerStateController.playerStates.finished);
+			playerStateManager.ChangeState (PlayerStateController.playerStates.finished);
 		}
 		
-		//Debug.Log (PlayerStateManager.getState());
+		//Debug.Log (playerStateManager.GetState());
 		
 		rigidbody.AddForce (movementVector);
 	}
 	
-	void stopShaking()
+	void StopShaking()
 	{
 		//Debug.Log (shaking.ToString());
 		shaking =false;
 		shake = originalRot;
-		OculusCamera.SetYRotation(originalRot);
+		oculusCamera.SetYRotation(originalRot);
 	}
-	void startVibrate(float leftIntentsity, float rightIntentsity)
+	void StartVibrate(float leftIntentsity, float rightIntentsity)
 	{
 		GamePad.SetVibration(0, leftIntentsity, rightIntentsity);
 	}
 	
-	void stopVibrate()
+	void StopVibrate()
 	{
 		GamePad.SetVibration(0, 0.0f, 0.0f);
 	}
 	
-	void setBlur(bool _enabled)
+	void SetBlur(bool _enabled)
 	{
 		if (_enabled) 
 		{

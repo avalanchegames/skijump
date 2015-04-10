@@ -7,27 +7,27 @@ using System.Collections;
 
 public class CameraBlanker : MonoBehaviour {
 
-	public bool BlankFrames = false;
-	public float TargetFPS = 59.0f;
-	public float MinimumTimeToForceShow = 2.0f;
-	private float TimeSinceLastBlank;
-	private Camera AttachedCamera;
+	public bool blankFrames = false; // Check this to enable frame blanking.
+	public float targetFPS = 59.0f; // Frames will start to be blanked when the frame rate drops below this number.
+	public float minimumTimeToForceShow = 2.0f; // After a blanked frame, the frame will not be blanked again until this time has elapsed.
+	private float timeSinceLastBlank;
+	private Camera attachedCamera;
 	
-	public Shader BlankingShader;
+	public Shader blankingShader;
 	
 	bool Errors;
 	
 	// Use this for initialization
 	void Start () {
-		AttachedCamera = GetComponent<Camera>();
+		attachedCamera = GetComponent<Camera>();
 		
-		if ( AttachedCamera == null)
+		if ( attachedCamera == null)
 		{
 			Debug.LogWarning("This script is not attached to a camera.");
 			Errors = true;
 		}
 		
-		if (BlankingShader == null)
+		if (blankingShader == null)
 		{
 			Debug.LogWarning("The blanking shader has not been set up.");
 			Errors = true;
@@ -38,51 +38,52 @@ public class CameraBlanker : MonoBehaviour {
 			Debug.LogWarning("Cameras will not be blanked on slow frames.");
 		}
 		
-		TimeSinceLastBlank = 0.0f;
+		timeSinceLastBlank = 0.0f;
 		
 	}
 	
 	// Update is called once per frame
 	void OnPreRender () 
 	{
-		if ( (!Errors) && (BlankFrames))
+		if ( (!Errors) && (blankFrames))
 		{
-			if ( ( (1/Time.deltaTime) < TargetFPS) && (TimeSinceLastBlank > MinimumTimeToForceShow) )
+			if ( ( (1/Time.deltaTime) < targetFPS) && (timeSinceLastBlank > minimumTimeToForceShow) )
 			{
 				// Blank the frame.
 				Debug.Log("Frame blanked out!");
 				
-				AttachedCamera.SetReplacementShader(BlankingShader, null);
+				attachedCamera.SetReplacementShader(blankingShader, null);
 				
-				AttachedCamera.clearFlags = CameraClearFlags.SolidColor;
+				attachedCamera.clearFlags = CameraClearFlags.SolidColor;
 				
 				RenderSettings.fog = false;
 				
-				TimeSinceLastBlank = 0.0f;
+				timeSinceLastBlank = 0.0f;
 			}
 			else
 			{
 				// Show the frame
-				AttachedCamera.ResetReplacementShader();
+				attachedCamera.ResetReplacementShader();
 				
-				AttachedCamera.clearFlags = CameraClearFlags.Skybox;
+				attachedCamera.clearFlags = CameraClearFlags.Skybox;
 				
 				RenderSettings.fog = true;
 				
-				TimeSinceLastBlank += Time.deltaTime;
+				timeSinceLastBlank += Time.deltaTime;
 			}
 		}
 	}
-	
+
+	// Reset the render settings in preparation for the next frame, lest there is a frame following a blank without fog, etc.
 	IEnumerator ResetRender()
 	{
 		yield return new WaitForEndOfFrame();
 		 
-		if ( TimeSinceLastBlank == 0.0f )
+		if ( timeSinceLastBlank == 0.0f )
 		{
-			AttachedCamera.ResetReplacementShader();
+			attachedCamera.ResetReplacementShader();
 			
-			AttachedCamera.clearFlags = CameraClearFlags.Skybox;
+			attachedCamera.clearFlags = CameraClearFlags.Skybox;
 			
 			RenderSettings.fog = true;
 		}

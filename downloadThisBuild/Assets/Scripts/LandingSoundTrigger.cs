@@ -9,12 +9,11 @@ public class LandingSoundTrigger : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		PlayerStateManager = gameObject.GetComponent<PlayerStateController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		PlayerStateManager = gameObject.GetComponent<PlayerStateController> ();
 		if (PlayerStateManager.getState () == PlayerStateController.playerStates.landing && !soundTrigger) {
 			audio.Stop();
 			audio.PlayOneShot(landingSound);
