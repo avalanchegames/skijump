@@ -211,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
 			PlayerStateManager.changeState (PlayerStateController.playerStates.finished);
 		}
 		
-		Debug.Log (PlayerStateManager.getState());
+		//Debug.Log (PlayerStateManager.getState());
 		
 		rigidbody.AddForce (movementVector);
 	}

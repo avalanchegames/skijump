@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿// Plays a sound as the player is about to perform their jump.
+
+using UnityEngine;
 using System.Collections;
 
 public class preJumpSound : MonoBehaviour {
 
 	PlayerStateController PlayerStateManager;
-	public AudioClip jump_build_up;
-	bool sound_played = false;
+	public AudioClip jump_build_up;	// The sound of the pre jump.
+	bool sound_played = false;	// To check if the sound has been played or not
 
 	// Use this for initialization
 	void Start () {
@@ -15,12 +17,12 @@ public class preJumpSound : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		PlayerStateManager = gameObject.GetComponent <PlayerStateController> ();
-		if (PlayerStateManager.getState() == PlayerStateController.playerStates.pre_jump && !sound_played) 
+		PlayerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Get the player's current state.
+		if (PlayerStateManager.getState() == PlayerStateController.playerStates.pre_jump && !sound_played) //If the player's current state is pre jump and if the pre jump sound has not played
 		{
-			audio.Stop();
-			sound_played = true;
-			audio.PlayOneShot(jump_build_up);
+			audio.Stop();	// Stop any sound the player is playing
+			sound_played = true;	// Stops the sound from being played again.
+			audio.PlayOneShot(jump_build_up);	// Play the pre jump sound once.
 		}
 	
 	}
