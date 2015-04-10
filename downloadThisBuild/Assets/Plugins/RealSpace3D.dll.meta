@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dc0d027d7b38b9745a169afdd9533c7a
+MonoAssemblyImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder:
+    RealSpace3D.RealSpace3D_AudioListener: -900
+    RealSpace3D.RealSpace3D_AudioSource: -800
+  userData: 
