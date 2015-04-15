@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class slowmoLanding : MonoBehaviour {
+public class SlowMoLanding : MonoBehaviour {
 	
-	public AudioClip SoundFile;	// The sound that is played while the player is in slow motion
+	public AudioClip soundFile;	// The sound that is played while the player is in slow motion
 	
 	void OnTriggerEnter( Collider other )
 	{
 		other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
 		other.gameObject.audio.Stop ();
-		other.gameObject.audio.PlayOneShot (SoundFile);
+		other.gameObject.audio.PlayOneShot (soundFile);
 	}
 }
