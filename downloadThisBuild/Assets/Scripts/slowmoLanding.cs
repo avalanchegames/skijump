@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Runtime.InteropServices; // Required for realspace3d
 
-public class slowmoLanding : MonoBehaviour {
-	
+// Script by Norbert Leskovics; modified by Tony Jarvis.
+// (AR)This script starts slow motion on the player and plays a sound.
+
+public class SlowmoLanding : MonoBehaviour 
+{
 	public AudioClip SoundFile;	// The sound that is played while the player is in slow motion
 	private RealSpace3D.RealSpace3D_AudioSource the_AudioSouce = null;
 	private GameObject windObject;
@@ -20,12 +23,16 @@ public class slowmoLanding : MonoBehaviour {
 		windObject = GameObject.Find ("Graphics");
 	}
 
+	// Runs when a collider touches this trigger.
 	void OnTriggerEnter( Collider other )
 	{
-		other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
-		other.gameObject.audio.Stop ();
-		other.gameObject.audio.clip = SoundFile;
-		other.gameObject.audio.Play();
+		if (other.gameObject.GetComponent <PlayerMovement>() != null)
+		{
+			other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
+			other.gameObject.audio.Stop ();
+			other.gameObject.audio.clip = SoundFile;
+			other.gameObject.audio.Play();
+		}
 		windObject.GetComponent<wind_ambience> ().windOn = false;
 		//the_AudioSouce.rs3d_LoadAudioClip("heartbeat");
 		//the_AudioSouce.rs3d_PlaySound (0);

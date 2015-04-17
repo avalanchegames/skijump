@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PhysicsMaterialChange : MonoBehaviour {
+// Script by Norbert Leskovics.
+// (AR)This script halts the player when the player enters the attached trigger collider.
 
+public class PhysicsMaterialChange : MonoBehaviour 
+{
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
 	}
 
+	// Runs when a collider touches this trigger.
 	void OnTriggerEnter( Collider other )
 	{
 		other.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
