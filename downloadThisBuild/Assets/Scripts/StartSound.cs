@@ -2,16 +2,35 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Runtime.InteropServices; // Required for realspace3d
 
 public class startSound : MonoBehaviour {
 	
 	PlayerStateController PlayerStateManager;
 	public AudioClip start_sound;	// The sound that will beused.
 	bool sound_played = false;	// Used to ensure the sound is only played once.
+	private RealSpace3D.RealSpace3D_AudioSource the_AudioSouce = null;
+	int audioIndex = 1;
+	
+	void awake()
+	{
+		if (Application.isPlaying)
+		{
+			the_AudioSouce = GameObject.Find ("First Person " +
+			                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
+			
+			if(the_AudioSouce == null)
+				Debug.LogError("theAudioSource isn't valid");
+		}
+	}
 	
 	// Use this for initialization
 	void Start () {
+		the_AudioSouce = GameObject.Find ("First Person " +
+		                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
 		
+		if(the_AudioSouce == null)
+			Debug.LogError("theAudioSource isn't valid");
 	}
 	
 	// Update is called once per frame
@@ -19,9 +38,11 @@ public class startSound : MonoBehaviour {
 		PlayerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Get the player's current state.
 		if (PlayerStateManager.GetState() == PlayerStateController.playerStates.starting && !sound_played) // If the player's state is starting and the start sound has not been played.
 		{
-			audio.clip = start_sound;	// Make the source sound the start sound.
+			//audio.clip = start_sound;	// Make the source sound the start sound.
 			sound_played = true;	// Stops the sound from being played again.
 			audio.Play();	// Play the sound in a loop.
+			//the_AudioSouce.rs3d_PlayIn3D(true);
+			//the_AudioSouce.rs3d_PlaySound(audioIndex);
 		}
 		
 	}
