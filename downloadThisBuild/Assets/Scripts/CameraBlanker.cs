@@ -1,51 +1,50 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 // Andrew Robson:
 // This script checks the output's frame rate sets the shader to draw black if the frame rate is too low.
 // The script needs to be attached each camera.
 
-public class CameraBlanker : MonoBehaviour {
-
+public class CameraBlanker : MonoBehaviour 
+{
 	public bool blankFrames = false; // Check this to enable frame blanking.
 	public float targetFPS = 59.0f; // Frames will start to be blanked when the frame rate drops below this number.
 	public float minimumTimeToForceShow = 2.0f; // After a blanked frame, the frame will not be blanked again until this time has elapsed.
 	private float timeSinceLastBlank;
 	private Camera attachedCamera;
-	
 	public Shader blankingShader;
 	
-	bool Errors;
+	bool errors;
 	
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		attachedCamera = GetComponent<Camera>();
 		
-		if ( attachedCamera == null)
+		if (attachedCamera == null)
 		{
 			Debug.LogWarning("This script is not attached to a camera.");
-			Errors = true;
+			errors = true;
 		}
 		
 		if (blankingShader == null)
 		{
 			Debug.LogWarning("The blanking shader has not been set up.");
-			Errors = true;
+			errors = true;
 		}
 		
-		if (Errors)
+		if (errors)
 		{
 			Debug.LogWarning("Cameras will not be blanked on slow frames.");
 		}
 		
 		timeSinceLastBlank = 0.0f;
-		
 	}
 	
 	// Update is called once per frame
 	void OnPreRender () 
 	{
-		if ( (!Errors) && (blankFrames))
+		if ( (!errors) && (blankFrames))
 		{
 			if ( ( (1/Time.deltaTime) < targetFPS) && (timeSinceLastBlank > minimumTimeToForceShow) )
 			{

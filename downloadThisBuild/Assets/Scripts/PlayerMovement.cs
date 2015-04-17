@@ -2,6 +2,8 @@
 using System.Collections;
 using XInputDotNetPure;
 
+// Script by Norbert Leskovics.
+
 public class PlayerMovement : MonoBehaviour
 {
 	private Vector3 movementVector;
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 	OVRCameraController oculusCamera;			//an instance of OVRCameraController to handle oculus-related code
 	float originalRot;							//stores the original rotation of the camera, in order to be able to switch back to this once the player leaves the shaking part
 	
-	
+	// Use this for initialization
 	void Start()
 	{
 		//blurObject = GetComponentInChildren(MotionBlur);
@@ -57,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 		
 	}
 
+	// Update is called once per frame
 	void Update()
 	{
 		if (playerStateManager.GetState () == PlayerStateController.playerStates.slide_down) 
@@ -100,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
 					StopShaking();
 					return;
 				}
-				
 			}
 			else 
 			{
@@ -112,19 +114,20 @@ public class PlayerMovement : MonoBehaviour
 				StopShaking();
 				return;
 			}
-			
 		}
 		
-		if (landingRumble) {
+		if (landingRumble) 
+		{
 			//GamePad.SetVibration(0, 0.3f, 0.3f);	
 			StartVibrate (0.3f, 0.3f);
-			
 		} 
-		else {
+		else 
+		{
 			StopVibrate();
 		}
 		
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.post_landing) {
+		if (playerStateManager.GetState() == PlayerStateController.playerStates.post_landing) 
+		{
 			
 			if (Input.GetButton ("B") || Input.GetKey("b"))
 			{
@@ -132,10 +135,9 @@ public class PlayerMovement : MonoBehaviour
 				return;
 			}
 		}
-		
-		
 	}
 	
+	// FixedUpdate is called once per physics engine step.
 	void FixedUpdate()
 	{
 		//movementVector.x = Input.GetAxis("LeftJoystickX") * movementSpeed;
@@ -154,7 +156,8 @@ public class PlayerMovement : MonoBehaviour
 		}
 		
 		
-		if (jumpEnabled) {	
+		if (jumpEnabled) 
+		{	
 			//only do the jump if it is enabled by the trigger
 			playerStateManager.ChangeState (PlayerStateController.playerStates.pre_jump);
 			
@@ -166,7 +169,8 @@ public class PlayerMovement : MonoBehaviour
 			}
 		}
 		
-		if (jumpDone) {
+		if (jumpDone) 
+		{
 			playerStateManager.ChangeState (PlayerStateController.playerStates.jumping);
 			jumpStartTime = Time.time;
 			//Time.timeScale = timeScaleVal;
@@ -250,6 +254,4 @@ public class PlayerMovement : MonoBehaviour
 			myRightCam.GetComponent<MotionBlur> ().enabled = false;
 		}
 	}
-	
-	
 }

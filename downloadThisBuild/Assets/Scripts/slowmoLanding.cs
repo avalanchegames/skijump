@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class slowmoLanding : MonoBehaviour {
+// Script by Norbert Leskovics; modified by Tony Jarvis.
+// (AR)This script starts slow motion on the player and plays a sound.
+
+public class SlowmoLanding : MonoBehaviour 
+{
+	public AudioClip soundFile;	// The sound that is played while the player is in slow motion
 	
-	public AudioClip SoundFile;	// The sound that is played while the player is in slow motion
-	
+	// Runs when a collider touches this trigger.
 	void OnTriggerEnter( Collider other )
 	{
-		other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
-		other.gameObject.audio.Stop ();
-		other.gameObject.audio.PlayOneShot (SoundFile);
+		if (other.gameObject.GetComponent <PlayerMovement>() != null)
+		{
+			other.gameObject.GetComponent <PlayerMovement>().slowMo = true;
+			other.gameObject.audio.Stop ();
+			other.gameObject.audio.PlayOneShot (soundFile);
+		}
 	}
 }

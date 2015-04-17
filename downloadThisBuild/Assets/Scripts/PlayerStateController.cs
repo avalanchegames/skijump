@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class PlayerStateController : MonoBehaviour {
+// Script by Norbert Leskovics.
+// (AR)This script holds an enumerator to represent what the player is currently doing.
 
+public class PlayerStateController : MonoBehaviour 
+{
 	public enum playerStates
 	{
 		starting,
@@ -14,15 +17,16 @@ public class PlayerStateController : MonoBehaviour {
 		finished
 	}
 	private playerStates currentState;	
-
+	
+	// Setter for the state.
 	public void ChangeState(playerStates newState)
 	{
 		currentState = newState;
 	}
 
+	// Getter for the state.
 	public playerStates GetState()
 	{
 		return currentState;
 	}
-
 }

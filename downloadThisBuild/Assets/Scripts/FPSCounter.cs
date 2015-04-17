@@ -10,7 +10,7 @@ public class FPSCounter : MonoBehaviour
 	public float outputFrequency = 1.0f; // How often the FPS should be reported. 0 will report every frame.
 	
 	private float timeElapsed;
-	private float FPSCount = 61.0f; // Initial value assume that everything's OK.
+	private float FPSCount = 61.0f; // Initial value; assume that everything's OK.
 	
 	// Use this for initialization
 	void Start () 
@@ -49,6 +49,7 @@ public class FPSCounter : MonoBehaviour
 		}
 	}
 	
+	// Getter that returns the last value written.
 	public float GetFPS()
 	{
 		return FPSCount;
