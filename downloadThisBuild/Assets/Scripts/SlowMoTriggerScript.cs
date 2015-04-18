@@ -34,7 +34,7 @@ public class SlowMoTriggerScript : MonoBehaviour
 			other.gameObject.audio.Play ();
 		}
 		the_AudioSouce.rs3d_StopSound (0);
-		windObject.GetComponent<wind_ambience> ().windOn = false;
+		windObject.GetComponent<WindAmbience> ().windOn = false;
 		/*the_AudioSouce.rs3d_StopSound (1);
 		the_AudioSouce.rs3d_LoadAudioClip("heartbeat");
 		the_AudioSouce.rs3d_PlaySound (0);*/

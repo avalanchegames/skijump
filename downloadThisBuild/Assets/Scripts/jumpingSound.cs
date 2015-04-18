@@ -34,7 +34,7 @@ public class JumpingSound : MonoBehaviour
 			audio.Stop();	// Stop any sound the player is playing.
 			audio.clip = jumpingSoundFile;	// Change the player's source clip to the jumping sound.
 			audio.Play();	// Plays the jumping sound in a loop.
-			windObject.GetComponent<wind_ambience> ().windOn = true;
+			windObject.GetComponent<WindAmbience> ().windOn = true;
 			//the_AudioSouce.rs3d_LoadAudioClip("Clothes in wind (hard)");
 			//the_AudioSouce.rs3d_PlaySound (0);
 		}

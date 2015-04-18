@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class wind_ambience : MonoBehaviour {
+// Script by Tony Jarvis.
 
+public class WindAmbience : MonoBehaviour 
+{
 	public bool windOn = true;
 	bool soundPlayed = true;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
 		if (!windOn)
 		{
 			StopWind();
@@ -30,6 +32,7 @@ public class wind_ambience : MonoBehaviour {
 	{
 		audio.Stop ();
 	}
+
 	void PlayWind()
 	{
 		audio.Play ();

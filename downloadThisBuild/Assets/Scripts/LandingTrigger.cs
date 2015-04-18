@@ -35,7 +35,7 @@ public class LandingTrigger : MonoBehaviour
 			the_AudioSouce.rs3d_PlaySound (1);
 			//the_AudioSouce.rs3d_LoadAudioClip("Assets/Resources/landing_post_landing_final_resouces.wav");
 			soundTrigger = true;	// Used to ensure the landing sound is only played once.
-			windObject.GetComponent<wind_ambience> ().windOn = true;
+			windObject.GetComponent<WindAmbience> ().windOn = true;
 		}
 	}
 }
