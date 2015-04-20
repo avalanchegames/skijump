@@ -7015,7 +7015,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -7068,7 +7068,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 324438808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7c54914de0b8d4a8ae4760d1222ec3, type: 3}
+  m_Script: {fileID: 11500000, guid: c4deab5a89def074a948fbc2cc75a18b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   windOn: 1
@@ -14600,6 +14600,7 @@ GameObject:
   - 114: {fileID: 728574969}
   - 82: {fileID: 728574979}
   - 114: {fileID: 728574971}
+  - 114: {fileID: 728574980}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -14700,14 +14701,14 @@ MonoBehaviour:
   theSoundOptions:
   - fVolume: 1
     bLoopSound: 0
-    bMuteSound: 1
+    bMuteSound: 0
     bPlayOnStart: 0
     bPlay3DSound: 1
     bShowSoundOptions: 1
     bWasPlaying: 0
   - fVolume: 1
     bLoopSound: 0
-    bMuteSound: 1
+    bMuteSound: 0
     bPlayOnStart: 0
     bPlay3DSound: 1
     bShowSoundOptions: 1
@@ -14800,7 +14801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aeb884b86abcfb459c7762fa81bb77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ski_sound: {fileID: 8300000, guid: 962762c576ead6e49967a388811dbbfe, type: 3}
 --- !u!114 &728574978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14826,7 +14826,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -14871,6 +14871,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &728574980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728574966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46432d2604b746943bccfef7656342c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ski_sound: {fileID: 0}
 --- !u!1 &731511732
 GameObject:
   m_ObjectHideFlags: 0

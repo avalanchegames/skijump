@@ -27,6 +27,7 @@ public class LandingTrigger : MonoBehaviour
 	// Runs when a collider touches this trigger.
 	void OnTriggerEnter( Collider other )	// If the landing trigger collides with the player.
 	{
+		other.gameObject.GetComponent <PlayerMovement>().landed = true;	// Change the player's state to landed.
 		if (other.gameObject.GetComponent <PlayerMovement>() != null)
 		{
 			other.gameObject.audio.Stop (); // Stop any audio the player is currently playing.
