@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 		shaking = false;
 		landingRumble = false;
 		slowMo = false;
-		playerStateManager.ChangeState (PlayerStateController.playerStates.starting);
+		playerStateManager.ChangeState (PlayerStateController.PlayerStates.starting);
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		oculusCamera = GetComponentInChildren<OVRCameraController>();
 		oculusCamera.GetYRotation(ref originalRot);
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 		padPrevState = padState;
 		padState = GamePad.GetState(0);
 		
-		if (playerStateManager.GetState () == PlayerStateController.playerStates.slide_down) 
+		if (playerStateManager.GetState () == PlayerStateController.PlayerStates.slide_down) 
 		{
 			//what happens when sliding down
 			if ((inShakyBit)&&(shaking))
@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 			StopVibrate();
 		}
 		
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.post_landing) {
+		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.post_landing) {
 			
 			if (Input.GetButton ("B") || Input.GetKey("b"))
 			{
@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		if (jumpEnabled) {	
 			//only do the jump if it is enabled by the trigger
-			playerStateManager.ChangeState (PlayerStateController.playerStates.pre_jump);
+			playerStateManager.ChangeState (PlayerStateController.PlayerStates.pre_jump);
 			
 			if (( (Input.GetButton ("A")) || Input.GetKey("a") ) && !jumpDone)
 			{
@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		
 		if (jumpDone) {
-			playerStateManager.ChangeState (PlayerStateController.playerStates.jumping);
+			playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping);
 			jumpStartTime = Time.time;
 		}
 		
@@ -159,23 +159,23 @@ public class PlayerMovement : MonoBehaviour
 		if ( (Input.GetButtonDown ("X") || Input.GetKey("x") ) && !started)
 		{
 			started = true;	
-			playerStateManager.ChangeState (PlayerStateController.playerStates.slide_down);
+			playerStateManager.ChangeState (PlayerStateController.PlayerStates.slide_down);
 			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			rigidbody.AddForce(0.0f, 0.0f, -100.0f);
 		}
 
 		//button detect and state change for legs to the side 
-		if (playerStateManager.GetState () == PlayerStateController.playerStates.jumping) 	//only transition to jumping_wide from jumping
+		if (playerStateManager.GetState () == PlayerStateController.PlayerStates.jumping) 
 		{
 			if ((padPrevState.Buttons.LeftShoulder == ButtonState.Pressed) && (padState.Buttons.LeftShoulder == ButtonState.Pressed) 
 			    &&(padPrevState.Buttons.RightShoulder == ButtonState.Pressed) && (padState.Buttons.RightShoulder == ButtonState.Pressed))
 			{
-				playerStateManager.ChangeState (PlayerStateController.playerStates.jumping_wide);
+				playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping_wide);
 			}
 			if ((padPrevState.Buttons.LeftShoulder == ButtonState.Released) && (padState.Buttons.LeftShoulder == ButtonState.Released) 
 			    &&(padPrevState.Buttons.RightShoulder == ButtonState.Released) && (padState.Buttons.RightShoulder == ButtonState.Released))
 			{
-				playerStateManager.ChangeState (PlayerStateController.playerStates.jumping);
+				playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping);
 			}
 		}
 		
@@ -184,19 +184,19 @@ public class PlayerMovement : MonoBehaviour
 			slowMo =false;
 			if (landingTime==0.0f) 
 			{
-				playerStateManager.ChangeState (PlayerStateController.playerStates.landing);
+				playerStateManager.ChangeState (PlayerStateController.PlayerStates.landing);
 				landingRumble = true;
 				landingTime = Time.time;
 			}
 			else if (landingTime!=0.0f)
 			{
-				playerStateManager.ChangeState (PlayerStateController.playerStates.post_landing);
+				playerStateManager.ChangeState (PlayerStateController.PlayerStates.post_landing);
 			}
 		}
 		
 		if (finished) 
 		{
-			playerStateManager.ChangeState (PlayerStateController.playerStates.finished);
+			playerStateManager.ChangeState (PlayerStateController.PlayerStates.finished);
 		}
 		
 		//Debug.Log (playerStateManager.GetState());

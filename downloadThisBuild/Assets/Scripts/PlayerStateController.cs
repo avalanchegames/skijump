@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerStateController : MonoBehaviour {
 
 	//playerStates below contains all the possible states the player can be in 
-	public enum playerStates
+	public enum PlayerStates
 	{
 		starting,
 		slide_down,
@@ -15,14 +15,14 @@ public class PlayerStateController : MonoBehaviour {
 		post_landing,
 		finished
 	}
-	private playerStates currentState;	//holds the value of the current state, obviously we want this to be private
+	private PlayerStates currentState;	
 
-	public void ChangeState(playerStates newState)	//setter for changing the state 
+	public void ChangeState(PlayerStates newState)
 	{
 		currentState = newState;
 	}
 
-	public playerStates GetState()					//getter for the state
+	public PlayerStates GetState()
 	{
 		return currentState;
 	}
