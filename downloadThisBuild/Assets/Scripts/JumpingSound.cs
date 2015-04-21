@@ -28,7 +28,7 @@ public class JumpingSound : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.jumping && !sound_played && !gameObject.GetComponent <PlayerMovement>().slowMo) // If the player is in the jumping state and has the jumping sound has not already been played
+		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.jumping && !sound_played && !gameObject.GetComponent <PlayerMovement>().slowMo) // If the player is in the jumping state and has the jumping sound has not already been played
 		{
 			sound_played = true;	// Stops the sound been played again.
 			audio.Stop();	// Stop any sound the player is playing.

@@ -18,7 +18,7 @@ public class LandingSound : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.landing && !sound_played) 
+		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.landing && !sound_played) 
 		{
 			audio.Stop();
 			sound_played = true;

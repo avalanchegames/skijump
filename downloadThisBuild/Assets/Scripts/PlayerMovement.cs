@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 			StopVibrate();
 		}
 		
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.post_landing) 
+		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.post_landing) 
 		{
 			
 			if (Input.GetButton ("B") || Input.GetKey("b"))

@@ -27,7 +27,7 @@ public class FinishedSound : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.finished && !sound_played) // If the playrer is in the finished state and the finish sound has not been played.
+		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.finished && !sound_played) // If the playrer is in the finished state and the finish sound has not been played.
 		{
 			audio.Stop();	// Stop any the player is currently playing.
 			sound_played = true;	// Stops the sound being played more than once.

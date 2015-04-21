@@ -27,7 +27,7 @@ public class SlideDownSound : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.slide_down && !sound_played) // If the player's current state is the slide down state and the slide down sound has not been played.
+		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.slide_down && !sound_played) // If the player's current state is the slide down state and the slide down sound has not been played.
 		{
 			//audio.clip = ski_sound; // Set the current sound to be the slide sown sound.
 			sound_played = true;	// Stops the sound from being played more than once.

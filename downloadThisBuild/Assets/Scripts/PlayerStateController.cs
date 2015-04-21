@@ -4,8 +4,9 @@ using System.Collections;
 // Script by Norbert Leskovics.
 // (AR)This script holds an enumerator to represent what the player is currently doing.
 
-	//playerStates below contains all the possible states the player can be in public class PlayerStateController : MonoBehaviour 
+public class PlayerStateController : MonoBehaviour 
 {
+	//playerStates below contains all the possible states the player can be in 
 	public enum PlayerStates
 	{
 		starting,
