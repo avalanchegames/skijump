@@ -39,8 +39,8 @@ public class StartSound : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		playerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Get the player's current state.
-		if (playerStateManager.GetState() == PlayerStateController.playerStates.starting && !sound_played) // If the player's state is starting and the start sound has not been played.
+		PlayerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Get the player's current state.
+		if (PlayerStateManager.GetState() == PlayerStateController.PlayerStates.starting && !sound_played) // If the player's state is starting and the start sound has not been played.
 		{
 			//audio.clip = start_sound;	// Make the source sound the start sound.
 			sound_played = true;	// Stops the sound from being played again.

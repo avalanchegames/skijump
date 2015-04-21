@@ -1,0 +1,987 @@
+fileFormatVersion: 2
+guid: f8cd297b0cd60e1469315554b19c3ca2
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ikHandle1
+    100002: ikHandle2
+    100004: ikHandle3
+    100006: ikHandle4
+    100008: //RootNode
+    100010: L_foot1
+    100012: L_Footie1
+    100014: L_Hip
+    100016: L_Knee1
+    100018: LegsnSkis:SKi4
+    100020: LegsnSkis:SKi5
+    100022: locator1
+    100024: locator2
+    100026: locator3
+    100028: nurbsCircle1
+    100030: nurbsCircle2
+    100032: nurbsCircle3
+    100034: nurbsCircle4
+    100036: nurbsCircle5
+    100038: Pelvis
+    100040: polySurface1
+    100042: R_foot
+    100044: R_Footie
+    100046: R_Hip
+    100048: R_Knee
+    100050: Root
+    400000: ikHandle1
+    400002: ikHandle2
+    400004: ikHandle3
+    400006: ikHandle4
+    400008: //RootNode
+    400010: L_foot1
+    400012: L_Footie1
+    400014: L_Hip
+    400016: L_Knee1
+    400018: LegsnSkis:SKi4
+    400020: LegsnSkis:SKi5
+    400022: locator1
+    400024: locator2
+    400026: locator3
+    400028: nurbsCircle1
+    400030: nurbsCircle2
+    400032: nurbsCircle3
+    400034: nurbsCircle4
+    400036: nurbsCircle5
+    400038: Pelvis
+    400040: polySurface1
+    400042: R_foot
+    400044: R_Footie
+    400046: R_Hip
+    400048: R_Knee
+    400050: Root
+    4300000: LegsnSkis:SKi5
+    4300002: LegsnSkis:SKi4
+    4300004: polySurface1
+    7400000: 'slide down '
+    7400002: jump off
+    7400004: 'straight legs flying '
+    7400006: 'legs moving to the side '
+    7400008: legs on the side flying
+    7400010: legs moving close again
+    7400012: landing
+    7400014: landed
+    7400016: starting
+    7400018: FullTrack
+    7400020: SlideLoop
+    9500000: //RootNode
+    13700000: LegsnSkis:SKi4
+    13700002: LegsnSkis:SKi5
+    13700004: polySurface1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: 'slide down '
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 137
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jump off
+      takeName: Take 001
+      firstFrame: 137
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: 'straight legs flying '
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: 'legs moving to the side '
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: legs on the side flying
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 239
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: legs moving close again
+      takeName: Take 001
+      firstFrame: 240
+      lastFrame: 245
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: landing
+      takeName: Take 001
+      firstFrame: 245
+      lastFrame: 265
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: landed
+      takeName: Take 001
+      firstFrame: 265
+      lastFrame: 320
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: starting
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1.10000002
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FullTrack
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 329
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SlideLoop
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 127
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
