@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	//170-365 still in progress
 	//365 - landing
 	public float jumpPower = 0.8f;		//this value is applied to the player object when the jump occurs and 
+	public float jumpCorrection = 0.008f;		//this value is applied to the player object when the jump occurs in the x-axis. This is to fix a problem where the player was moving too far to the right
 	float jumpStartTime;				//fetches the time when the jump started
 	float landingTime;
 	bool started;
@@ -164,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
 			if (( (Input.GetButton ("A")) || Input.GetKey("a") ) && !jumpDone)
 			{
 				//jumpStartTime = Time.time;
+				movementVector.x -= jumpCorrection;
 				movementVector.y += jumpPower;
 				//jumpDone = true;
 			}
