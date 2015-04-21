@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerStateController : MonoBehaviour {
 
-	public enum playerStates
+	public enum PlayerStates
 	{
 		starting,
 		slide_down,
@@ -14,14 +14,14 @@ public class PlayerStateController : MonoBehaviour {
 		post_landing,
 		finished
 	}
-	private playerStates currentState;	
+	private PlayerStates currentState;	
 
-	public void ChangeState(playerStates newState)
+	public void ChangeState(PlayerStates newState)
 	{
 		currentState = newState;
 	}
 
-	public playerStates GetState()
+	public PlayerStates GetState()
 	{
 		return currentState;
 	}

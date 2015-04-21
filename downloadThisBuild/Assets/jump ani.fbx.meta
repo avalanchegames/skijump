@@ -67,6 +67,8 @@ ModelImporter:
     7400012: landing
     7400014: landed
     7400016: starting
+    7400018: FullTrack
+    7400020: SlideLoop
     9500000: //RootNode
     13700000: LegsnSkis:SKi4
     13700002: LegsnSkis:SKi5
@@ -253,7 +255,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -716,6 +718,162 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 1
       lastFrame: 1.10000002
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FullTrack
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 329
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: LegsnSkis:SKi4
+        weight: 1
+      - path: LegsnSkis:SKi5
+        weight: 1
+      - path: locator1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/locator2
+        weight: 1
+      - path: nurbsCircle1/locator3
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/L_Hip/L_Knee1/L_foot1/L_Footie1
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot
+        weight: 1
+      - path: nurbsCircle3/nurbsCircle2/Root/Pelvis/R_Hip/R_Knee/R_foot/R_Footie
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      - path: nurbsCircle4/ikHandle1
+        weight: 1
+      - path: nurbsCircle4/ikHandle3
+        weight: 1
+      - path: nurbsCircle5
+        weight: 1
+      - path: nurbsCircle5/ikHandle2
+        weight: 1
+      - path: nurbsCircle5/ikHandle4
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SlideLoop
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 127
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
