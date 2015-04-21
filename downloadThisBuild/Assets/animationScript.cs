@@ -21,10 +21,8 @@ public class animationScript : MonoBehaviour {
 */
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator>();
-		///Animation flyanim = anim.GetComponent<Animation> ();
-		//flyanim.wrapMode = WrapMode.Loop;
-		anim.SetBool("idle", true);
+		anim = GetComponent<Animator>();	//fetch the Animator
+		anim.SetBool("idle", true);			//set the bools to their initial values
 		anim.SetBool("flying", false);
 		anim.SetBool ("sidelegs", false);
 		animStateManager = gameObject.GetComponentInParent <PlayerStateController> ();
@@ -35,11 +33,9 @@ public class animationScript : MonoBehaviour {
 		Debug.Log(animStateManager.GetState().ToString());
 		//get the state for animation from the playermovement script
 		animStateManager.ChangeState (gameObject.GetComponentInParent <PlayerMovement> ().playerStateManager.GetState()); 
-		//change the animations based on the current state of the state machine
-		switch (animStateManager.GetState ()) 
+		switch (animStateManager.GetState ()) //change the animations based on the current state of the state machine
 		{
 		case PlayerStateController.playerStates.starting:
-			//anim.SetTrigger(startingHash);
 			anim.Play("starting", -1, 0f);
 			break;
 		case PlayerStateController.playerStates.slide_down:
@@ -51,7 +47,6 @@ public class animationScript : MonoBehaviour {
 			anim.Play("jump off", -1, 0f);
 			break;
 		case PlayerStateController.playerStates.jumping:
-			///anim.SetBool("flying", true);
 			anim.Play("straight legs flying ", -1, 0f);
 			break;
 		case PlayerStateController.playerStates.jumping_wide:
