@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerStateController : MonoBehaviour {
 
+	//playerStates below contains all the possible states the player can be in 
 	public enum PlayerStates
 	{
 		starting,
