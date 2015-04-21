@@ -27,10 +27,11 @@ public class PlayerMovement : MonoBehaviour
 	bool shakingRight = true;			//determine if the shaking takes palce to the left or right
 	public bool slowMo;					//determines if slow motion is turned on or not
 	float shake;						//controls if shaking is turned on or not
-	PlayerStateController playerStateManager;	//an instance of the PlayerStateController state machine 
+	public PlayerStateController playerStateManager;	//an instance of the PlayerStateController state machine 
 	OVRCameraController oculusCamera;			//an instance of OVRCameraController to handle oculus-related code
 	float originalRot;							//stores the original rotation of the camera, in order to be able to switch back to this once the player leaves the shaking part
-	
+	GamePadState padState;							//current state of the controller
+	GamePadState padPrevState;						//previous state of the controller
 	
 	void Start()
 	{
@@ -59,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
+		padPrevState = padState;
+		padState = GamePad.GetState(0);
+
+
 		if (playerStateManager.GetState () == PlayerStateController.playerStates.slide_down) 
 		{
 			//what happens when sliding down
@@ -185,6 +190,21 @@ public class PlayerMovement : MonoBehaviour
 			playerStateManager.ChangeState (PlayerStateController.playerStates.slide_down);
 			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			rigidbody.AddForce(0.0f, 0.0f, -100.0f);
+		}
+
+		//button detect and state change for legs to the side 
+		if (playerStateManager.GetState () == PlayerStateController.playerStates.jumping) 
+		{
+			if ((padPrevState.Buttons.LeftShoulder == ButtonState.Pressed) && (padState.Buttons.LeftShoulder == ButtonState.Pressed) 
+			    &&(padPrevState.Buttons.RightShoulder == ButtonState.Pressed) && (padState.Buttons.RightShoulder == ButtonState.Pressed))
+			{
+				playerStateManager.ChangeState (PlayerStateController.playerStates.jumping_wide);
+			}
+			if ((padPrevState.Buttons.LeftShoulder == ButtonState.Released) && (padState.Buttons.LeftShoulder == ButtonState.Released) 
+			    &&(padPrevState.Buttons.RightShoulder == ButtonState.Released) && (padState.Buttons.RightShoulder == ButtonState.Released))
+			{
+				playerStateManager.ChangeState (PlayerStateController.playerStates.jumping);
+			}
 		}
 		
 		if (landed) 

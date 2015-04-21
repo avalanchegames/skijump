@@ -9,6 +9,7 @@ public class PlayerStateController : MonoBehaviour {
 		slide_down,
 		pre_jump,
 		jumping,
+		jumping_wide,
 		landing,
 		post_landing,
 		finished
