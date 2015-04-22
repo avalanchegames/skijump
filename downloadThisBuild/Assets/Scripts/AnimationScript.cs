@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class animationScript : MonoBehaviour 
+public class AnimationScript : MonoBehaviour 
 {
 	Animator anim;
 	PlayerStateController animStateManager;
 	PlayerStateController.PlayerStates lastState;
 	int framecount;
+	PlayerMovement playerMovementManager;
 /*
  * some code i've written for animations before findign a simpler solution, but gonna keep for now just in case 
  * delete this before submitting though, but only after animations are fully working - NL
@@ -28,6 +29,7 @@ public class animationScript : MonoBehaviour
 		anim.SetBool("flying", false);
 		anim.SetBool ("sidelegs", false);
 		animStateManager = gameObject.GetComponentInParent <PlayerStateController> ();
+		playerMovementManager = gameObject.GetComponentInParent <PlayerMovement> ();
 	}
 	
 	// Update is called once per frame
@@ -35,53 +37,56 @@ public class animationScript : MonoBehaviour
 	{
 		//Debug.Log(animStateManager.GetState().ToString());
 		//get the state for animation from the playermovement script
-		animStateManager.ChangeState (gameObject.GetComponentInParent <PlayerMovement> ().playerStateManager.GetState()); 
+		animStateManager.ChangeState (playerMovementManager.playerStateManager.GetState()); 
 		//change the animations based on the current state of the state machine
 
 		// Check if there is a change.
-		if (lastState != animStateManager.GetState ()) {
-			switch (animStateManager.GetState ()) { //change the animations based on the current state of the state machine
-			case PlayerStateController.PlayerStates.starting:
+		if (lastState != animStateManager.GetState ()) 
+		{
+			//change the animations based on the current state of the state machine
+			switch (animStateManager.GetState ()) 
+			{ 
+				case PlayerStateController.PlayerStates.starting:
 				{
 					//anim.SetTrigger(startingHash);
 					anim.Play ("starting", -1, 0f);
 				}
 				break;
-			case PlayerStateController.PlayerStates.slide_down:
+				case PlayerStateController.PlayerStates.slide_down:
 				{
 					anim.SetBool ("idle", false);
 					anim.Play ("slide down ", -1, 0f);
 				}
 				break;
-			case PlayerStateController.PlayerStates.pre_jump:
+				case PlayerStateController.PlayerStates.pre_jump:
 				{
 					//anim.SetBool("flying", true);
 					anim.Play ("jump off", -1, 0f);
 				}	
 				break;
-			case PlayerStateController.PlayerStates.jumping:
+				case PlayerStateController.PlayerStates.jumping:
 				{
 					anim.SetBool ("flying", true);
 					anim.Play ("straight legs flying ", -1, 0f);
 				}
 				break;
-			case PlayerStateController.PlayerStates.jumping_wide:
+				case PlayerStateController.PlayerStates.jumping_wide:
 				{
 					anim.Play ("legs on the side flying", -1, 0f);
 				}
 				break; 
-			case PlayerStateController.PlayerStates.landing:
+				case PlayerStateController.PlayerStates.landing:
 				{
 					anim.SetBool ("flying", false);
 					anim.Play ("landing", -1, 0f);
 				}
 				break;
-			case PlayerStateController.PlayerStates.post_landing:
+				case PlayerStateController.PlayerStates.post_landing:
 				{
 					anim.Play ("landed", -1, 0f);
 				}
 				break;
-			case PlayerStateController.PlayerStates.finished:
+				case PlayerStateController.PlayerStates.finished:
 				{
 					anim.SetBool ("idle", true);
 					anim.Play ("starting", -1, 0f);

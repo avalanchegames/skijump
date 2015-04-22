@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using XInputDotNetPure;					//used for the gamepad functions such as rumble and button input detection
 
@@ -24,13 +24,17 @@ public class PlayerMovement : MonoBehaviour
 	const float maxShakeRot = 4.0f;		//maximum shaking rotation allowed
 	const float shakePerFrame = 0.6f;	//how many times to shake the oculus camera per frame
 	bool shakingRight = true;			//determine if the shaking takes palce to the left or right
-	public bool slowMo;					//determines if slow motion is turned on or not
+	public bool slowmo;					//determines if slow motion is turned on or not
 	float shake;						//controls if shaking is turned on or not
 	public PlayerStateController playerStateManager;	//an instance of the PlayerStateController state machine 
 	OVRCameraController oculusCamera;			//an instance of OVRCameraController to handle oculus-related code
 	float originalRot;							//stores the original rotation of the camera, in order to be able to switch back to this once the player leaves the shaking part
 	GamePadState padState;							//current state of the controller
 	GamePadState padPrevState;						//previous state of the controller
+	GameObject myLeftCam;
+	GameObject myRightCam;
+	MotionBlur myLeftCamMotionBlur;
+	MotionBlur myRightCamMotionBlue;
 	
 	// Use this for initialization
 	void Start()
@@ -46,12 +50,15 @@ public class PlayerMovement : MonoBehaviour
 		inShakyBit = false;
 		shaking = false;
 		landingRumble = false;
-		slowMo = false;
+		slowmo = false;
 		playerStateManager.ChangeState (PlayerStateController.PlayerStates.starting);
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		oculusCamera = GetComponentInChildren<OVRCameraController>();
 		oculusCamera.GetYRotation(ref originalRot);
-		
+		myLeftCam = GameObject.Find("CameraLeft");
+		myRightCam = GameObject.Find("CameraRight");
+		myLeftCamMotionBlur = myLeftCam.GetComponent<MotionBlur> ();
+		myRightCamMotionBlue = myRightCam.GetComponent<MotionBlur> ();
 	}
 
 	// Update is called once per frame
@@ -101,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
 			{
 				StopVibrate();
 			}
+			
 			if ((!inShakyBit))
 			{
 				StopShaking();
@@ -134,12 +142,13 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		//turn slowmo on and off
-		if (slowMo) 
+		if (slowmo) 
 		{
 			Time.timeScale = timeScaleVal;
 			SetBlur(true);
 				
-		} else 
+		} 
+		else 
 		{
 			Time.timeScale = 1.0f;
 			SetBlur(false);
@@ -192,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		if (landed) 
 		{
-			slowMo =false;
+			slowmo =false;
 			if (landingTime==0.0f) 
 			{
 				playerStateManager.ChangeState (PlayerStateController.PlayerStates.landing);
@@ -240,17 +249,17 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (_enabled) 
 		{
-			GameObject myLeftCam = GameObject.Find("CameraLeft");
-			myLeftCam.GetComponent<MotionBlur> ().enabled = true;
-			GameObject myRightCam = GameObject.Find("CameraRight");
-			myRightCam.GetComponent<MotionBlur> ().enabled = true;
+			
+			myLeftCamMotionBlur.enabled = true;
+			
+			myRightCamMotionBlue.enabled = true;
 		} 
 		else 
 		{
-			GameObject myLeftCam = GameObject.Find("CameraLeft");
-			myLeftCam.GetComponent<MotionBlur> ().enabled = false;
-			GameObject myRightCam = GameObject.Find("CameraRight");
-			myRightCam.GetComponent<MotionBlur> ().enabled = false;
+			
+			myLeftCamMotionBlur.enabled = false;
+			
+			myRightCamMotionBlue.enabled = false;
 		}
 	}
 }

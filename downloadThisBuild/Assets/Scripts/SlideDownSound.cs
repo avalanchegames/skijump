@@ -19,7 +19,9 @@ public class SlideDownSound : MonoBehaviour
 		                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
 		
 		if(the_AudioSouce == null)
+		{
 			Debug.LogError("theAudioSource isn't valid");
+		}
 
 		playerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Gets the player's current state.
 	}

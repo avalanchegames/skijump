@@ -12,7 +12,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   m_Layer: 0
-  m_Name: Conifer 1
+  m_Name: Conifer 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,16 +111,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ShadowTex
+          name: _BumpSpecMap
         second:
-          m_Texture: {fileID: 2800000, guid: 8d64bb50ad0b223428925d8a43950d98, type: 3}
+          m_Texture: {fileID: 2800000, guid: 8d61854e4f4f72044825315939fe8e61, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _BumpSpecMap
+          name: _ShadowTex
         second:
-          m_Texture: {fileID: 2800000, guid: 8d61854e4f4f72044825315939fe8e61, type: 3}
+          m_Texture: {fileID: 2800000, guid: 8d64bb50ad0b223428925d8a43950d98, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -134,12 +134,12 @@ Material:
         second: 1
       data:
         first:
-          name: _TranslucencyViewDependency
-        second: .573000014
-      data:
-        first:
           name: _ShadowStrength
         second: .800000012
+      data:
+        first:
+          name: _TranslucencyViewDependency
+        second: .573000014
       data:
         first:
           name: _ShadowOffsetScale

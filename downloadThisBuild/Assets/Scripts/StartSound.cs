@@ -22,7 +22,9 @@ public class StartSound : MonoBehaviour
 			                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
 			
 			if(the_AudioSouce == null)
+			{
 				Debug.LogError("theAudioSource isn't valid");
+			}
 		}
 	}
 	
@@ -33,13 +35,16 @@ public class StartSound : MonoBehaviour
 		                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
 		
 		if(the_AudioSouce == null)
+		{
 			Debug.LogError("theAudioSource isn't valid");
+		}
+			
+		playerStateManager = gameObject.GetComponent <PlayerStateController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		playerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Get the player's current state.
 		if (playerStateManager.GetState() == PlayerStateController.PlayerStates.starting && !sound_played) // If the player's state is starting and the start sound has not been played.
 		{
 			//audio.clip = start_sound;	// Make the source sound the start sound.
