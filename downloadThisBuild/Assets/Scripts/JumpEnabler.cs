@@ -10,19 +10,23 @@ public class JumpEnabler : MonoBehaviour
 	// Runs when a collider touches this trigger.
 	void OnTriggerEnter( Collider other )
 	{
-		if (other.gameObject.GetComponent <PlayerMovement>() != null)
+		PlayerMovement playerMovementManager = other.gameObject.GetComponent <PlayerMovement>();
+		
+		if (playerMovementManager != null)
 		{
-			other.gameObject.GetComponent <PlayerMovement>().jumpEnabled = true;
+			playerMovementManager.jumpEnabled = true;
 		}
 	}
 
 	// Runs when a collider leaves this trigger entirely.
 	void OnTriggerExit( Collider other )
 	{
-		if (other.gameObject.GetComponent <PlayerMovement>() != null)
+		PlayerMovement playerMovementManager = other.gameObject.GetComponent <PlayerMovement>();
+		
+		if (playerMovementManager != null)
 		{
-			other.gameObject.GetComponent <PlayerMovement>().jumpEnabled = false;
-			other.gameObject.GetComponent <PlayerMovement>().jumpDone = true;
+			playerMovementManager.jumpEnabled = false;
+			playerMovementManager.jumpDone = true;
 		}
 	}
 }

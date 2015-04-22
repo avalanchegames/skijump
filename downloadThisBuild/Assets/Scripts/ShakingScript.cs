@@ -9,19 +9,21 @@ public class ShakingScript : MonoBehaviour
 	// Runs when a collider touches this trigger.
 	void OnTriggerEnter( Collider other )
 	{
-		if (other.gameObject.GetComponent <PlayerMovement>() != null)
+		PlayerMovement playerMovementManager = other.gameObject.GetComponent <PlayerMovement>();
+		if (playerMovementManager != null)
 		{
-			other.gameObject.GetComponent <PlayerMovement>().inShakyBit = true;
-			other.gameObject.GetComponent <PlayerMovement>().shaking = true;
+			playerMovementManager.inShakyBit = true;
+			playerMovementManager.shaking = true;
 		}
 	}
 	
 	// Runs when a collider leaves this trigger entirely.
 	void OnTriggerExit( Collider other )
 	{
-		if (other.gameObject.GetComponent <PlayerMovement>() != null)
+		PlayerMovement playerMovementManager = other.gameObject.GetComponent <PlayerMovement>();
+		if (playerMovementManager != null)
 		{
-			other.gameObject.GetComponent <PlayerMovement>().inShakyBit = false;
+			playerMovementManager.inShakyBit = false;
 		}
 	}
 }

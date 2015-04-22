@@ -20,7 +20,12 @@ public class PhysicsMaterialChange : MonoBehaviour
 	void OnTriggerEnter( Collider other )
 	{
 		other.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-		other.gameObject.GetComponent <PlayerMovement>().finished = true;
+		
+		PlayerMovement playerMovementManager = other.gameObject.GetComponent <PlayerMovement>();
+		if (playerMovementManager == null)
+		{
+			playerMovementManager.finished = true;
+		}
 /*		// Find the Hill that the player is on.
 		GameObject theLandingHill = GameObject.Find ("LandingRescaled");
 

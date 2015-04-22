@@ -14,7 +14,7 @@ public class CameraBlanker : MonoBehaviour
 	private Camera attachedCamera;
 	public Shader blankingShader;
 	
-	bool errors;
+	bool errors = false;
 	
 	// Use this for initialization
 	void Start () 
