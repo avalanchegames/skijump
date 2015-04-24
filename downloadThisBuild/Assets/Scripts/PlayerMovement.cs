@@ -141,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
 	// FixedUpdate is called once per physics engine step.
 	void FixedUpdate()
 	{
+		Debug.Log (playerStateManager.GetState().ToString());
 		//turn slowmo on and off
 		if (slowmo) 
 		{
@@ -195,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
 			if ((padPrevState.Buttons.LeftShoulder == ButtonState.Released) && (padState.Buttons.LeftShoulder == ButtonState.Released) 
 			    &&(padPrevState.Buttons.RightShoulder == ButtonState.Released) && (padState.Buttons.RightShoulder == ButtonState.Released))
 			{
-				playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping);
+				//playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping);
 			}
 		}
 		
