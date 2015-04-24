@@ -141,7 +141,6 @@ public class PlayerMovement : MonoBehaviour
 	// FixedUpdate is called once per physics engine step.
 	void FixedUpdate()
 	{
-		Debug.Log (playerStateManager.GetState().ToString());
 		//turn slowmo on and off
 		if (slowmo) 
 		{
@@ -262,5 +261,10 @@ public class PlayerMovement : MonoBehaviour
 			
 			myRightCamMotionBlue.enabled = false;
 		}
+	}
+	
+	void OnDisable()
+	{
+		StopVibrate();
 	}
 }

@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: jump ani control
+  m_Name: JumpAnimationController
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: idle
@@ -218,6 +218,10 @@ Transition:
     m_ConditionEvent: sidelegs
     m_EventTreshold: 0
     m_ExitTime: .899999976
+  - m_ConditionMode: 1
+    m_ConditionEvent: flying
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -304,6 +308,10 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: idle
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 2
+    m_ConditionEvent: flying
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
