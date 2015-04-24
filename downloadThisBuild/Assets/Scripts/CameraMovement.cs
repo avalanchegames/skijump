@@ -7,7 +7,7 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour 
 {
-	Vector3 cameraMovementVector = new Vector3(0.0f, -0.299072f, 0.671055f); // Numbers were obtained by moving the camera controller in the scene and recording the change in the Transform's position.
+	Vector3 cameraMovementVector = new Vector3(0.6f, -1.0f, 3.5f); 
 	public float movementDuration = 0.54f;
 	Transform thisTransform;
 	float positionProgress;
