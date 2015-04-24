@@ -7,7 +7,7 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour 
 {
-	Vector3 cameraMovementVector = new Vector3(0.6f, -1.0f, 3.5f); 
+	Vector3 cameraMovementVector = new Vector3(0.714f, -1.0f, 1.35f); 
 	public float movementDuration = 0.54f;
 	Transform thisTransform;
 	float positionProgress;
