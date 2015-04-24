@@ -22,7 +22,7 @@ public class PhysicsMaterialChange : MonoBehaviour
 		other.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 		
 		PlayerMovement playerMovementManager = other.gameObject.GetComponent <PlayerMovement>();
-		if (playerMovementManager == null)
+		if (playerMovementManager != null)
 		{
 			playerMovementManager.finished = true;
 		}
