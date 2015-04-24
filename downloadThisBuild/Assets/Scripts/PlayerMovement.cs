@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
 	GamePadState padPrevState;						//previous state of the controller
 	GameObject myLeftCam;
 	GameObject myRightCam;
-	MotionBlur myLeftCamMotionBlur;
-	MotionBlur myRightCamMotionBlue;
+	public MotionBlur myLeftCamMotionBlur;
+	public MotionBlur myRightCamMotionBlue;
 	
 	// Use this for initialization
 	void Start()
