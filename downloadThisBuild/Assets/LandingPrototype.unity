@@ -14739,8 +14739,10 @@ MonoBehaviour:
   inShakyBit: 0
   shaking: 0
   timeScaleVal: .200000003
-  slowMo: 0
+  slowmo: 0
   playerStateManager: {fileID: 0}
+  myLeftCamMotionBlur: {fileID: 1280744397}
+  myRightCamMotionBlue: {fileID: 960274448}
 --- !u!54 &728574973
 Rigidbody:
   m_ObjectHideFlags: 0
