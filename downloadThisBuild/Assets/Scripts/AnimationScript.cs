@@ -68,10 +68,12 @@ public class AnimationScript : MonoBehaviour
 				{
 					anim.SetBool ("flying", true);
 					anim.Play ("straight legs flying ", -1, 0f);
+					anim.SetBool("sidelegs", false);
 				}
 				break;
 				case PlayerStateController.PlayerStates.jumping_wide:
 				{
+					anim.SetBool("sidelegs", true);
 					anim.Play ("legs on the side flying", -1, 0f);
 				}
 				break; 

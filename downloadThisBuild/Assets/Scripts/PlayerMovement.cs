@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
 			if ((padPrevState.Buttons.LeftShoulder == ButtonState.Released) && (padState.Buttons.LeftShoulder == ButtonState.Released) 
 			    &&(padPrevState.Buttons.RightShoulder == ButtonState.Released) && (padState.Buttons.RightShoulder == ButtonState.Released))
 			{
-				playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping);
+				//playerStateManager.ChangeState (PlayerStateController.PlayerStates.jumping);
 			}
 		}
 		
@@ -261,5 +261,10 @@ public class PlayerMovement : MonoBehaviour
 			
 			myRightCamMotionBlue.enabled = false;
 		}
+	}
+	
+	void OnDisable()
+	{
+		StopVibrate();
 	}
 }
