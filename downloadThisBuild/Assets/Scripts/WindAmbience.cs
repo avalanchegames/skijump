@@ -5,8 +5,8 @@ using System.Collections;
 
 public class WindAmbience : MonoBehaviour 
 {
-	public bool windOn = true;
-	bool soundPlayed = true;
+	public bool windOn = true;	// Used to determine the wind sound should be playing or not
+	bool soundPlayed = true;	// Used to determine if the sound has already been played
 
 	// Use this for initialization
 	void Start () 
@@ -16,24 +16,24 @@ public class WindAmbience : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (!windOn)
+		if (!windOn)	// If the wind is stopped
 		{
-			StopWind();
-			soundPlayed = false;
+			StopWind();	// Stop playing the sound
+			soundPlayed = false;	// Allows the sound to be restarted later.
 		}
-		if (windOn && !soundPlayed)
+		if (windOn && !soundPlayed)	// If the wind is turned on
 		{
-			PlayWind();
-			soundPlayed = true;
+			PlayWind();	// Play the wind sound
+			soundPlayed = true;	// Stops the sound from being triggered infinately
 		}
 	}
 
-	void StopWind()
+	void StopWind()	// Stops the ambient wind sound
 	{
 		audio.Stop ();
 	}
 
-	void PlayWind()
+	void PlayWind()	// Plays the ambient wind sound
 	{
 		audio.Play ();
 	}

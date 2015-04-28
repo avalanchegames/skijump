@@ -6,16 +6,17 @@ using System.Runtime.InteropServices; // Required for realspace3d
 
 public class LandingTrigger : MonoBehaviour 
 {
-	PlayerStateController playerStateManager;
+	PlayerStateController playerStateManager; // Used to check the player's state
 	public AudioClip landingSound;	// The sound that will be played when the player collides with the landing trigger
 	bool soundTrigger = false;	// Used to check whether or not the landing sound has played
-	private RealSpace3D.RealSpace3D_AudioSource the_AudioSouce = null;
-	private GameObject windObject;
-	private WindAmbience windObjectAmbience;
+	private RealSpace3D.RealSpace3D_AudioSource the_AudioSouce = null; // Used to play the RealSpace3D audio.
+	private GameObject windObject;	// Used to find the object with the source that plays the ambient wind sound
+	private WindAmbience windObjectAmbience;	// Used to turn the wind audio on or off.
 
 	// Use this for initialization
 	void Start ()
 	{
+		// Gets the player's realspace3d audio source
 		the_AudioSouce = GameObject.Find ("First Person " +
 		                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
 		
@@ -24,6 +25,7 @@ public class LandingTrigger : MonoBehaviour
 			Debug.LogError("theAudioSource isn't valid");
 		}
 
+		// Get the audio source of the wind sound
 		windObject = GameObject.Find ("Graphics");
 		windObjectAmbience = windObject.GetComponent<WindAmbience> ();
 	}
@@ -37,12 +39,9 @@ public class LandingTrigger : MonoBehaviour
 		{
 			playerMovementManager.landed = true;	// Change the player's state to landed.
 			other.gameObject.audio.Stop (); // Stop any audio the player is currently playing.
-			//other.gameObject.audio.PlayOneShot (landingSound);	// Play the landing sound once.
-			//the_AudioSouce.rs3d_StopSound (2);
-			the_AudioSouce.rs3d_PlaySound (1);
-			//the_AudioSouce.rs3d_LoadAudioClip("Assets/Resources/landing_post_landing_final_resouces.wav");
+			the_AudioSouce.rs3d_PlaySound (1);	// Play the realspace3d sound
 			soundTrigger = true;	// Used to ensure the landing sound is only played once.
-			windObjectAmbience.windOn = true;
+			windObjectAmbience.windOn = true;	// Turn the ambient wind sound on
 		}
 	}
 }

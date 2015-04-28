@@ -10,15 +10,17 @@ public class JumpingSound : MonoBehaviour
 	PlayerStateController playerStateManager;	// Used to identify what state the player is in
 	bool sound_played = false;	// Used to check if the sound has already been played.
 	public AudioClip jumpingSoundFile;	// The sound that is played while the player is in the jumping state.
-	private RealSpace3D.RealSpace3D_AudioSource the_AudioSouce = null;
-	private GameObject windObject;
-	private WindAmbience windObjectAmbience;
-	PlayerMovement playerMovementManager;
+	private RealSpace3D.RealSpace3D_AudioSource the_AudioSouce = null;	// Used to control the realspace3d audio
+	private GameObject windObject;	// Used to find the object with the source that plays the ambient wind sound
+	private WindAmbience windObjectAmbience;	// Used to turn the wind audio on or off.
+	PlayerMovement playerMovementManager;	// Used to check the player's movement
 	
 	// Use this for initialization
 	void Start ()
 	{
 		playerStateManager = gameObject.GetComponent <PlayerStateController> ();	// Get the player's current state.
+
+		// Find the realspace3d audio source
 		the_AudioSouce = GameObject.Find ("First Person " +
 		                                  "Controller").GetComponent ("RealSpace3D_AudioSource") as RealSpace3D.RealSpace3D_AudioSource;
 		                        
@@ -27,10 +29,11 @@ public class JumpingSound : MonoBehaviour
 			Debug.LogError("theAudioSource isn't valid");
 		}
 
+		// Find the source of the ambient wind sound.
 		windObject = GameObject.Find ("Graphics");
 		windObjectAmbience = windObject.GetComponent<WindAmbience> ();
 		
-		playerMovementManager = gameObject.GetComponent <PlayerMovement>();
+		playerMovementManager = gameObject.GetComponent <PlayerMovement>();	// Get the players current movement
 	}
 	
 	// Update is called once per frame
@@ -42,9 +45,7 @@ public class JumpingSound : MonoBehaviour
 			audio.Stop();	// Stop any sound the player is playing.
 			audio.clip = jumpingSoundFile;	// Change the player's source clip to the jumping sound.
 			audio.Play();	// Plays the jumping sound in a loop.
-			windObjectAmbience.windOn = true;
-			//the_AudioSouce.rs3d_LoadAudioClip("Clothes in wind (hard)");
-			//the_AudioSouce.rs3d_PlaySound (0);
+			windObjectAmbience.windOn = true;	// Turn on the ambient wind sound
 		}
 	}
 }
