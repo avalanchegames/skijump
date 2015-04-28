@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Script by Norbert Leskovics.
+// Script checks the player's state for changes - upon change, an animation on the Animator is played, and variables in the Animation controller are altered.
+
 public class AnimationScript : MonoBehaviour 
 {
 	Animator anim;
@@ -8,19 +11,7 @@ public class AnimationScript : MonoBehaviour
 	PlayerStateController.PlayerStates lastState;
 	int framecount;
 	PlayerMovement playerMovementManager;
-/*
- * some code i've written for animations before findign a simpler solution, but gonna keep for now just in case 
- * delete this before submitting though, but only after animations are fully working - NL
-	int startingHash = Animator.StringToHash("starting");
-	int slideHash = Animator.StringToHash("Base Layer.slide down");
-	int jumpHash = Animator.StringToHash("Base Layer.jump off");
-	int sraightFlyHash = Animator.StringToHash("Base Layer.straight legs flying");
-	int legsOutHash = Animator.StringToHash("Base Layer.legs moving to the side");
-	int legsOutFlyHash = Animator.StringToHash("Base Layer.legs on the side flying");
-	int legsInHash = Animator.StringToHash("Base Layer.legs moving close again");
-	int landingHash = Animator.StringToHash("Base Layer.landing");
-	int landedHash = Animator.StringToHash("Base Layer.landed");
-*/
+
 	// Use this for initialization
 	void Start () 
 	{

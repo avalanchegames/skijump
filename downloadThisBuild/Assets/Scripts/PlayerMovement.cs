@@ -3,6 +3,7 @@ using System.Collections;
 using XInputDotNetPure;					//used for the gamepad functions such as rumble and button input detection
 
 // Script by Norbert Leskovics.
+// Script handles player movement, camera shaking, player input, controller vibration, motion blur, and slow motion.
 
 public class PlayerMovement : MonoBehaviour
 {
